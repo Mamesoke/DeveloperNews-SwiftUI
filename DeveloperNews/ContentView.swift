@@ -17,6 +17,7 @@ struct ContentView: View {
         New(name: "App Store submission update", image: "asc-outline"),
         New(name: "Program enrollment available in more regions in the Apple Developer app", image: "apple-developer-app"),
         New(name: "Get ready for AppTrackingTransparency", image: "ios14-outlined"),
+        New(name: "Announcing WWDC21", date: "March 30, 2021", image: "full-image", feature: true),
         New(name: "Updates to App Store server notifications", image: "storekit"),
         New(name: "Reminder: APNs provider API requirement starts March 31", image: "notifications"),
         New(name: "Additional guidance available for App Store privacy labels", image: "app-store"),
@@ -27,6 +28,10 @@ struct ContentView: View {
             if self.news[idx].feature{
                 ZStack{
                     NewFullImageRow(new: self.news[idx])
+                    Button {
+                        print("Button pressed idx: \(idx)")
+                    } label: {
+                    }
                 }
             }else{
                 ZStack{
@@ -65,13 +70,13 @@ struct NewRoundImageRow: View {
             Image(new.image)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 80, height: 80)
+                .frame(width: 60, height: 60)
                 .clipped()
             
             VStack(alignment: .leading) {
                 Text(new.name)
                     .font(.body)
-                    .padding(.bottom, 4)
+                    .padding(.bottom, 2)
                 
                 Text(new.date)
                     .font(.subheadline)
@@ -80,7 +85,9 @@ struct NewRoundImageRow: View {
             }
             
         }
-        .padding(.all, 8)
+        .frame(minWidth: 0, idealWidth: 100, maxWidth: .infinity, minHeight: 0, idealHeight: 80, maxHeight: .infinity, alignment: .leading)
+        .padding(.horizontal, 8)
+        .padding(.vertical, 4)
     }
 }
 
@@ -92,7 +99,7 @@ struct NewFullImageRow : View {
             Image(new.image)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(height:200)
+                .frame(height:150)
                 .cornerRadius(15)
                 .overlay(
                     RoundedRectangle(cornerRadius: 15)
@@ -101,11 +108,11 @@ struct NewFullImageRow : View {
             )
             
             Text(new.name)
-                .font(.system(.headline, design: .rounded))
+                .font(.system(.title, design: .rounded))
                 .fontWeight(.bold)
                 .foregroundColor(.white )
                 .multilineTextAlignment(.center)
-        }
+        }.padding(.vertical, 12)
     }
 }
 
