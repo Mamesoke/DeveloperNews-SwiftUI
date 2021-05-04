@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    var greyColor = Color(red: 65/255, green: 65/255, blue: 65/255)
     var news = [
         New(name: "Apple Search Ads introduces a new way to promote apps", date: "May 4, 2021", image: "app-store"),
         New(name: "Search suggestions now on the App Store", date: "April 29, 2021", image: "app-store"),
@@ -24,25 +25,40 @@ struct ContentView: View {
         New(name: "App Analytics now includes App Clip data", image: "app-clips"),
     ]
     var body: some View {
-        List(news.indices){ idx in
-            if self.news[idx].feature{
-                ZStack{
-                    NewFullImageRow(new: self.news[idx])
-                    Button {
-                        print("Button pressed idx: \(idx)")
-                    } label: {
+        VStack(alignment: .leading){
+            Text("Developer Apple")
+                .font(.title)
+                .fontWeight(.semibold)
+                .foregroundColor(greyColor)
+                .padding(.top, 8)
+                .padding(.bottom, 2)
+                .padding(.leading, 24)
+            Text("News and Updates")
+                .font(.caption)
+                .fontWeight(.semibold)
+                .foregroundColor(greyColor)
+                .padding(.leading, 24)
+            Divider()
+            List(news.indices){ idx in
+                if self.news[idx].feature{
+                    ZStack{
+                        NewFullImageRow(new: self.news[idx])
+                        Button {
+                            print("Button pressed idx: \(idx)")
+                        } label: {
+                        }
+                    }
+                }else{
+                    ZStack{
+                        NewRoundImageRow(new: self.news[idx])
+                        Button {
+                            print("Button pressed idx: \(idx)")
+                        } label: {
+                        }
                     }
                 }
-            }else{
-                ZStack{
-                    NewRoundImageRow(new: self.news[idx])
-                    Button {
-                        print("Button pressed idx: \(idx)")
-                    } label: {
-                    }
-                }
+               
             }
-           
         }
     }
 }
