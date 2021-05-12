@@ -12,7 +12,6 @@ import Firebase
 struct DeveloperNewsApp: App {
     init() {
         FirebaseApp.configure()
-        // NewsViewModel().fetchData()
     }
     
     var body: some Scene {
