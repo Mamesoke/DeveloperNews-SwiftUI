@@ -12,3 +12,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Remote image included in the list, real data replaced
 - Included mock version and visual features
 - Deactivate mode Debug and delete comments
+- Crashlytics implemented
+- Firebase performance implemented
