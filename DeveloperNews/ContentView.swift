@@ -11,7 +11,7 @@ struct ContentView: View {
     var greyColor = Color(red: 65/255, green: 65/255, blue: 65/255)
     
     @ObservedObject
-    private var viewModel = NewsViewModel()
+    private var viewModel = NewsViewModelMock()
     
     var body: some View {
         VStack(alignment: .leading){
