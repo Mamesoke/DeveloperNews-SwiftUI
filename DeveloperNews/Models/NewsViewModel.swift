@@ -20,7 +20,7 @@ class NewsViewModel: ObservableObject {
         return result
     }
     
-    private let collectionName = "apple-news-dummy"
+    private let collectionName = "apple-news"
     private var db = Database.database().reference()
     
     

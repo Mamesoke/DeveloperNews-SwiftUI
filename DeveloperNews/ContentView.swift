@@ -31,7 +31,7 @@ struct ContentView: View {
             List(viewModel.newList){ item in
                 if item.boolLittleImage {
                     ZStack{
-                        NewFullImageRowView(new: item)
+                        NewRoundImageRowView(new: item)
                         Button {
                             print("Button pressed idx: \(item)")
                         } label: {
@@ -39,7 +39,7 @@ struct ContentView: View {
                     }
                 }else{
                     ZStack{
-                        NewRoundImageRowView(new: item)
+                        NewFullImageRowView(new: item)
                         Button {
                             print("Button pressed idx: \(item)")
                         } label: {

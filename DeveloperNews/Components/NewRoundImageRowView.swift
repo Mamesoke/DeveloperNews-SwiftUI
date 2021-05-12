@@ -9,10 +9,10 @@ import SwiftUI
 
 struct NewRoundImageRowView: View {
     var new : NewsValue
+    
     var body: some View {
         HStack {
-            Image(new.image)
-                .resizable()
+            RemoteImage(url: new.image)
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 60, height: 60)
                 .clipped()

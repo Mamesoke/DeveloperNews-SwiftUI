@@ -9,10 +9,10 @@ import SwiftUI
 
 struct NewFullImageRowView: View {
     var new: NewsValue
+    
     var body: some View {
         ZStack{
-            Image(new.image)
-                .resizable()
+            RemoteImage(url: new.image)
                 .aspectRatio(contentMode: .fill)
                 .frame(height:150)
                 .cornerRadius(15)
@@ -20,7 +20,7 @@ struct NewFullImageRowView: View {
                     RoundedRectangle(cornerRadius: 15)
                         .foregroundColor(.gray)
                         .opacity(0.25)
-            )
+                )
             
             Text(new.title)
                 .font(.system(.title, design: .rounded))
