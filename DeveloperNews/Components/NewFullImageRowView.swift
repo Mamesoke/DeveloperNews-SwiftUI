@@ -8,21 +8,31 @@
 import SwiftUI
 
 struct NewFullImageRowView: View {
-    var new: NewModel
+    var new: NewsValue
+    let greyColor: Color = Color.init(red: 40/255, green: 40/255, blue: 40/255)
+    let blackColor: Color = Color.init(red: 30/255, green: 30/255, blue: 30/255)
+    
     var body: some View {
         ZStack{
-            Image(new.image)
-                .resizable()
+            RemoteImage(url: new.image)
                 .aspectRatio(contentMode: .fill)
-                .frame(height:150)
+                .frame(minWidth: 0, idealWidth: 100, maxWidth: .infinity, minHeight: 0, idealHeight: 150, maxHeight: 200, alignment: .center)
                 .cornerRadius(15)
                 .overlay(
-                    RoundedRectangle(cornerRadius: 15)
-                        .foregroundColor(.gray)
-                        .opacity(0.25)
-            )
+                    ZStack{
+                        RoundedRectangle(cornerRadius: 15)
+                            .fill(LinearGradient(gradient: Gradient(colors: [blackColor, greyColor]),
+                                                 startPoint: .top,
+                                                 endPoint: .bottom))
+                            .opacity(0.4)
+                        RoundedRectangle(cornerRadius: 15)
+                            .foregroundColor(.gray)
+                            .opacity(0.25)
+                    }
+                )
             
-            Text(new.name)
+            
+            Text(new.title)
                 .font(.system(.title, design: .rounded))
                 .fontWeight(.bold)
                 .foregroundColor(.white )

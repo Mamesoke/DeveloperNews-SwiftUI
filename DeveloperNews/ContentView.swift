@@ -9,21 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     var greyColor = Color(red: 65/255, green: 65/255, blue: 65/255)
-    var news = [
-        NewModel(name: "Apple Search Ads introduces a new way to promote apps", date: "May 4, 2021", image: "app-store"),
-        NewModel(name: "Search suggestions now on the App Store", date: "April 29, 2021", image: "app-store"),
-        NewModel(name: "What’s new in advertising attribution technologies", image: "ios14-outlined"),
-        NewModel(name: "Online group event in-app purchase requirement update", image: "asc-outline"),
-        NewModel(name: "Upcoming AppTrackingTransparency requirements", image: "ios14-outlined"),
-        NewModel(name: "App Store submission update", image: "asc-outline"),
-        NewModel(name: "Program enrollment available in more regions in the Apple Developer app", image: "apple-developer-app"),
-        NewModel(name: "Get ready for AppTrackingTransparency", image: "ios14-outlined"),
-        NewModel(name: "Announcing WWDC21", date: "March 30, 2021", image: "full-image", feature: true),
-        NewModel(name: "Updates to App Store server notifications", image: "storekit"),
-        NewModel(name: "Reminder: APNs provider API requirement starts March 31", image: "notifications"),
-        NewModel(name: "Additional guidance available for App Store privacy labels", image: "app-store"),
-        NewModel(name: "App Analytics now includes App Clip data", image: "app-clips"),
-    ]
+    
+    @ObservedObject
+    private var viewModel = NewsViewModel()
+    
     var body: some View {
         VStack(alignment: .leading){
             Text("Developer Apple")
@@ -39,25 +28,26 @@ struct ContentView: View {
                 .foregroundColor(greyColor)
                 .padding(.leading, 24)
             Divider()
-            List(news.indices){ idx in
-                if self.news[idx].feature{
+            List(viewModel.newList){ item in
+                if item.boolLittleImage {
                     ZStack{
-                        NewFullImageRowView(new: self.news[idx])
+                        NewRoundImageRowView(new: item)
                         Button {
-                            print("Button pressed idx: \(idx)")
+                            print("Button pressed idx: \(item)")
                         } label: {
                         }
                     }
                 }else{
                     ZStack{
-                        NewRoundImageRowView(new: self.news[idx])
+                        NewFullImageRowView(new: item)
                         Button {
-                            print("Button pressed idx: \(idx)")
+                            print("Button pressed idx: \(item)")
                         } label: {
                         }
                     }
                 }
-               
+            }.onAppear() {
+                self.viewModel.fetchData()
             }
         }
     }

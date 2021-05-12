@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct NewRoundImageRowView: View {
-    var new : NewModel
+    var new : NewsValue
+    
     var body: some View {
         HStack {
-            Image(new.image)
-                .resizable()
+            RemoteImage(url: new.image)
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 60, height: 60)
                 .clipped()
             
             VStack(alignment: .leading) {
-                Text(new.name)
+                Text(new.title)
                     .font(.body)
                     .padding(.bottom, 2)
                 
