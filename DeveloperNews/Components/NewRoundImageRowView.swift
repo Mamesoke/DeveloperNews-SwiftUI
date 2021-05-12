@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NewRoundImageRowView: View {
-    var new : NewModel
+    var new : NewsValue
     var body: some View {
         HStack {
             Image(new.image)
@@ -18,7 +18,7 @@ struct NewRoundImageRowView: View {
                 .clipped()
             
             VStack(alignment: .leading) {
-                Text(new.name)
+                Text(new.title)
                     .font(.body)
                     .padding(.bottom, 2)
                 

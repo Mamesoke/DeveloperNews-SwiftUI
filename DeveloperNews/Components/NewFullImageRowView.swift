@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NewFullImageRowView: View {
-    var new: NewModel
+    var new: NewsValue
     var body: some View {
         ZStack{
             Image(new.image)
@@ -22,7 +22,7 @@ struct NewFullImageRowView: View {
                         .opacity(0.25)
             )
             
-            Text(new.name)
+            Text(new.title)
                 .font(.system(.title, design: .rounded))
                 .fontWeight(.bold)
                 .foregroundColor(.white )

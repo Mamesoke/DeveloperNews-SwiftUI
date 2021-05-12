@@ -6,9 +6,15 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct DeveloperNewsApp: App {
+    init() {
+        FirebaseApp.configure()
+        // NewsViewModel().fetchData()
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
