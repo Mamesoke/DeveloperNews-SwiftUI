@@ -42,6 +42,9 @@ class NewsViewModel: ObservableObject {
                     let newsRetrieved = try? newJSONDecoder().decode(News.self, from: data)
                     if let newsRetrieved = newsRetrieved {
                         self.newList = self.retrieveAll(newsRetrieved)
+                        Analytics.logEvent("fetch_data", parameters: [
+                            "records": self.newList.count as NSObject
+                          ])
                     }
                 }
             }

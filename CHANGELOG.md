@@ -14,3 +14,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Deactivate mode Debug and delete comments
 - Crashlytics implemented
 - Firebase performance implemented
+- Included Analytics and custom events
