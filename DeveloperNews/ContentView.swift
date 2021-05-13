@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct ContentView: View {
     var greyColor = Color(red: 65/255, green: 65/255, blue: 65/255)
@@ -33,6 +34,7 @@ struct ContentView: View {
                     ZStack{
                         NewRoundImageRowView(new: item)
                         Button {
+                            logEvent(item.title)
                             print("Button pressed idx: \(item)")
                         } label: {
                         }
@@ -41,6 +43,7 @@ struct ContentView: View {
                     ZStack{
                         NewFullImageRowView(new: item)
                         Button {
+                            logEvent(item.title)
                             print("Button pressed idx: \(item)")
                         } label: {
                         }
@@ -51,6 +54,14 @@ struct ContentView: View {
             }
         }
     }
+    
+    func logEvent(_ recordName: String){
+        Analytics.logEvent(AnalyticsEventSelectContent, parameters: [
+            AnalyticsParameterItemID: "id-\(recordName)",
+          AnalyticsParameterItemName: recordName,
+          AnalyticsParameterContentType: "cont"
+          ])
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {
@@ -58,3 +69,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
