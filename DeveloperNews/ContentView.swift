@@ -10,9 +10,13 @@ import Firebase
 
 struct ContentView: View {
     var greyColor = Color(red: 65/255, green: 65/255, blue: 65/255)
-    
     @ObservedObject
-    private var viewModel = NewsViewModel()
+    private var viewModel: NewsViewModel
+    
+    init(_ viewModel: NewsViewModel = NewsViewModel()) {
+        self.viewModel = viewModel
+    }
+    
     
     var body: some View {
         VStack(alignment: .leading){

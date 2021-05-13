@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		01588AFBE456075703951711 /* Pods_DeveloperNewsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD324C9D3DC19B463DD78DC6 /* Pods_DeveloperNewsTests.framework */; };
 		BE2FFE04264B574B0009A5B1 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2FFE03264B574B0009A5B1 /* RemoteImage.swift */; };
+		BE399B7E264DEA750048FA00 /* ContentViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE399B7D264DEA750048FA00 /* ContentViewTests.swift */; };
+		BE399B82264DEAB80048FA00 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED850B22641E8B700E6B9FC /* ContentView.swift */; };
+		BE399B88264DEB110048FA00 /* NewViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE399B87264DEB110048FA00 /* NewViewModelMock.swift */; };
+		BE399B8F264DEB190048FA00 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7DC4682647F035004BE77D /* NewsViewModel.swift */; };
+		BE399B93264DEB2F0048FA00 /* NewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED370EE2646044600601ED9 /* NewModel.swift */; };
+		BE399B97264DEB340048FA00 /* NewFullImageRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED370E82646040700601ED9 /* NewFullImageRowView.swift */; };
+		BE399B98264DEB340048FA00 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2FFE03264B574B0009A5B1 /* RemoteImage.swift */; };
+		BE399B99264DEB340048FA00 /* NewRoundImageRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED370E0264603A800601ED9 /* NewRoundImageRowView.swift */; };
+		BE399B9D264DEB380048FA00 /* DeveloperNewsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED850B02641E8B700E6B9FC /* DeveloperNewsApp.swift */; };
 		BE7DC4692647F035004BE77D /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7DC4682647F035004BE77D /* NewsViewModel.swift */; };
 		BE7DC46F2647F2CE004BE77D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE7DC46E2647F2CE004BE77D /* GoogleService-Info.plist */; };
 		BED370E1264603A800601ED9 /* NewRoundImageRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED370E0264603A800601ED9 /* NewRoundImageRowView.swift */; };
@@ -49,6 +58,8 @@
 		97E5CD343F8B231DCD5CA48B /* Pods_DeveloperNews_DeveloperNewsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DeveloperNews_DeveloperNewsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D96627F5F87618B83705C20 /* Pods-DeveloperNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeveloperNews.release.xcconfig"; path = "Target Support Files/Pods-DeveloperNews/Pods-DeveloperNews.release.xcconfig"; sourceTree = "<group>"; };
 		BE2FFE03264B574B0009A5B1 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
+		BE399B7D264DEA750048FA00 /* ContentViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewTests.swift; sourceTree = "<group>"; };
+		BE399B87264DEB110048FA00 /* NewViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewModelMock.swift; sourceTree = "<group>"; };
 		BE7DC4682647F035004BE77D /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		BE7DC46E2647F2CE004BE77D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BED370E0264603A800601ED9 /* NewRoundImageRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRoundImageRowView.swift; sourceTree = "<group>"; };
@@ -120,6 +131,14 @@
 				FD324C9D3DC19B463DD78DC6 /* Pods_DeveloperNewsTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BE399B86264DEAFC0048FA00 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BE399B87264DEB110048FA00 /* NewViewModelMock.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		BE7DC46D2647F2B7004BE77D /* Firebase */ = {
@@ -197,6 +216,8 @@
 		BED850C12641E8BB00E6B9FC /* DeveloperNewsTests */ = {
 			isa = PBXGroup;
 			children = (
+				BE399B86264DEAFC0048FA00 /* Models */,
+				BE399B7D264DEA750048FA00 /* ContentViewTests.swift */,
 				BED850C22641E8BB00E6B9FC /* DeveloperNewsTests.swift */,
 				BED850C42641E8BB00E6B9FC /* Info.plist */,
 			);
@@ -486,7 +507,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE399B7E264DEA750048FA00 /* ContentViewTests.swift in Sources */,
+				BE399B88264DEB110048FA00 /* NewViewModelMock.swift in Sources */,
+				BE399B8F264DEB190048FA00 /* NewsViewModel.swift in Sources */,
+				BE399B9D264DEB380048FA00 /* DeveloperNewsApp.swift in Sources */,
+				BE399B98264DEB340048FA00 /* RemoteImage.swift in Sources */,
+				BE399B97264DEB340048FA00 /* NewFullImageRowView.swift in Sources */,
 				BED850C32641E8BB00E6B9FC /* DeveloperNewsTests.swift in Sources */,
+				BE399B99264DEB340048FA00 /* NewRoundImageRowView.swift in Sources */,
+				BE399B93264DEB2F0048FA00 /* NewModel.swift in Sources */,
+				BE399B82264DEAB80048FA00 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,7 +595,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -620,7 +650,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
