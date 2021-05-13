@@ -13,7 +13,7 @@ class NewsViewModel: ObservableObject {
     
     func retrieveAll(_ news: News) -> [NewsValue] {
         var result: [NewsValue] = []
-        for (key, value) in news {
+        for (_, value) in news {
             result.append(value)
         }
         
