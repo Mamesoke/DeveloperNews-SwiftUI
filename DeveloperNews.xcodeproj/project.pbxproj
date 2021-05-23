@@ -10,6 +10,7 @@
 		01588AFBE456075703951711 /* Pods_DeveloperNewsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD324C9D3DC19B463DD78DC6 /* Pods_DeveloperNewsTests.framework */; };
 		BE2FFE04264B574B0009A5B1 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2FFE03264B574B0009A5B1 /* RemoteImage.swift */; };
 		BE35680F265AE074003B55F1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE35680E265AE074003B55F1 /* NetworkManager.swift */; };
+		BE356834265AEBF1003B55F1 /* SearchToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE356833265AEBF1003B55F1 /* SearchToolbarView.swift */; };
 		BE399B7E264DEA750048FA00 /* ContentViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE399B7D264DEA750048FA00 /* ContentViewTests.swift */; };
 		BE399B82264DEAB80048FA00 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED850B22641E8B700E6B9FC /* ContentView.swift */; };
 		BE399B88264DEB110048FA00 /* NewViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE399B87264DEB110048FA00 /* NewViewModelMock.swift */; };
@@ -60,6 +61,7 @@
 		9D96627F5F87618B83705C20 /* Pods-DeveloperNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeveloperNews.release.xcconfig"; path = "Target Support Files/Pods-DeveloperNews/Pods-DeveloperNews.release.xcconfig"; sourceTree = "<group>"; };
 		BE2FFE03264B574B0009A5B1 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		BE35680E265AE074003B55F1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		BE356833265AEBF1003B55F1 /* SearchToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchToolbarView.swift; sourceTree = "<group>"; };
 		BE399B7D264DEA750048FA00 /* ContentViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewTests.swift; sourceTree = "<group>"; };
 		BE399B87264DEB110048FA00 /* NewViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewModelMock.swift; sourceTree = "<group>"; };
 		BE7DC4682647F035004BE77D /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				BED370E0264603A800601ED9 /* NewRoundImageRowView.swift */,
 				BED370E82646040700601ED9 /* NewFullImageRowView.swift */,
 				BE2FFE03264B574B0009A5B1 /* RemoteImage.swift */,
+				BE356833265AEBF1003B55F1 /* SearchToolbarView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 			files = (
 				BED370E1264603A800601ED9 /* NewRoundImageRowView.swift in Sources */,
 				BED850B32641E8B700E6B9FC /* ContentView.swift in Sources */,
+				BE356834265AEBF1003B55F1 /* SearchToolbarView.swift in Sources */,
 				BE2FFE04264B574B0009A5B1 /* RemoteImage.swift in Sources */,
 				BED850B12641E8B700E6B9FC /* DeveloperNewsApp.swift in Sources */,
 				BE35680F265AE074003B55F1 /* NetworkManager.swift in Sources */,
@@ -683,7 +687,7 @@
 				DEVELOPMENT_TEAM = 9463G4D4A3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = DeveloperNews/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -707,7 +711,7 @@
 				DEVELOPMENT_TEAM = 9463G4D4A3;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = DeveloperNews/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
