@@ -33,7 +33,10 @@ struct ContentView: View {
                 .foregroundColor(greyColor)
                 .padding(.leading, 24)
             Divider()
-            List(viewModel.newList){ item in
+            Button("Filter inverter", action: {
+                self.viewModel.invertSortList()
+            })
+            List(viewModel.newsValues){ item in
                 if item.boolLittleImage {
                     ZStack{
                         NewRoundImageRowView(new: item)
