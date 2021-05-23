@@ -5,56 +5,57 @@
 //  Created by Kevin Menéndez on 9/5/21.
 //
 
-import Foundation
+import SwiftUI
 import Firebase
 
 class NewsViewModel: ObservableObject {
-    @Published var newList = [NewsValue]()
+    @Published var newsValues = [NewsValue]()
+    var sortedAsc: Bool = false
+    let networkManager: NetworkManager
     
-    func retrieveAll(_ news: News) -> [NewsValue] {
-        var result: [NewsValue] = []
-        for (_, value) in news {
-            result.append(value)
-        }
-        
-        return result
+    init() {
+        networkManager = NetworkManager()
     }
-    
-    private let collectionName = "apple-news"
-    private var db = Database.database().reference()
-    
     
     func fetchData() {
-        db.child(collectionName).getData { (error, snapshot) in
-            if let error = error {
-                print("Error getting data \(error)")
-            }
-            else if snapshot.exists() {
-                print("Got data \(snapshot.value!)")
-                let doc = snapshot
-                
-                guard error == nil, doc.exists() == true, let dict = doc.value else {
-                    if let error = error {
-                        print(error)
-                    }
-                  return
-                }
-
-                if let data = try?  JSONSerialization.data(withJSONObject: dict, options: []) {
-                    let newsRetrieved = try? newJSONDecoder().decode(News.self, from: data)
-                    if let newsRetrieved = newsRetrieved {
-                        self.newList = self.retrieveAll(newsRetrieved)
-                        Analytics.logEvent("fetch_data", parameters: [
-                            "records": self.newList.count as NSObject
-                          ])
-                    }
-                }
-            }
-            else {
-                print("No data available")
-            }
+        networkManager.fetchData { (values) in
+            self.newsValues = values
+            
+            Analytics.logEvent("fetch_data", parameters: [
+                "records": self.newsValues.count as NSObject
+              ])
         }
     }
-}
+    
+    func invertSortList() {
+        sortedAsc = !sortedAsc
+        self.newsValues = self.sorted(self.newsValues, ascendent: sortedAsc)
+    }
+    
+    func sorted(_ list: [NewsValue], ascendent: Bool = false) -> [NewsValue] {
+        var orderList: [NewsValue] = []
+        if !ascendent {
+            orderList = list.sorted(by: { convertDateFromString($0.date) > convertDateFromString($1.date) })
+        } else {
+            orderList = list.sorted(by: { convertDateFromString($0.date) < convertDateFromString($1.date) })
+        }
+        return orderList
+    }
+    
+    func convertDateFromString(_ str: String) -> Date {
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "MMM dd, yyyy"
 
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "yyyy-MM-dd"
+
+        guard let date = dateFormatterGet.date(from: str) else {
+            // throw DateError.decode("There was an error decoding the string")
+            return Date()
+        }
+        // print(dateFormatterPrint.string(from: date))
+        
+        return date
+    }
+}
 
