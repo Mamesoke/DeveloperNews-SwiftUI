@@ -10,6 +10,7 @@ import Firebase
 
 class NewsViewModel: ObservableObject {
     @Published var newsValues = [NewsValue]()
+    @Published var renderValues = [NewsValue]()
     var sortedAsc: Bool = false
     let networkManager: NetworkManager
     
@@ -20,6 +21,7 @@ class NewsViewModel: ObservableObject {
     func fetchData() {
         networkManager.fetchData { (values) in
             self.newsValues = values
+            self.renderValues = values
             
             Analytics.logEvent("fetch_data", parameters: [
                 "records": self.newsValues.count as NSObject
@@ -29,7 +31,7 @@ class NewsViewModel: ObservableObject {
     
     func invertSortList() {
         sortedAsc = !sortedAsc
-        self.newsValues = self.sorted(self.newsValues, ascendent: sortedAsc)
+        self.renderValues = self.sorted(self.newsValues, ascendent: sortedAsc)
     }
     
     func sorted(_ list: [NewsValue], ascendent: Bool = false) -> [NewsValue] {
@@ -56,6 +58,17 @@ class NewsViewModel: ObservableObject {
         // print(dateFormatterPrint.string(from: date))
         
         return date
+    }
+    
+    func filter(by searchValue: String) -> [NewsValue] {
+        if searchValue.isEmpty || searchValue == "" {
+            return self.newsValues
+        }
+        
+        let orderList = self.newsValues.filter { searchText in
+            return searchText.title.lowercased().contains(searchValue.lowercased())
+        }
+        return orderList
     }
 }
 
