@@ -23,7 +23,8 @@ class NewsViewModelMock: NewsViewModel {
                                        image: image,
                                        linkNew: "emptyLink \(index)",
                                        title: "Title test \(index)")
-            super.newList.append(newElement)
+            
+            super.renderValues.append(newElement)
         }
     }
     

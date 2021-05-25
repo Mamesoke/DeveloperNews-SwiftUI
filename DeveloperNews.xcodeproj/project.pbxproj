@@ -11,6 +11,9 @@
 		BE2FFE04264B574B0009A5B1 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2FFE03264B574B0009A5B1 /* RemoteImage.swift */; };
 		BE35680F265AE074003B55F1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE35680E265AE074003B55F1 /* NetworkManager.swift */; };
 		BE356834265AEBF1003B55F1 /* SearchToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE356833265AEBF1003B55F1 /* SearchToolbarView.swift */; };
+		BE3568F2265D8AFB003B55F1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE35680E265AE074003B55F1 /* NetworkManager.swift */; };
+		BE35690D265D8B65003B55F1 /* SearchToolbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE356833265AEBF1003B55F1 /* SearchToolbarView.swift */; };
+		BE356912265D8C4D003B55F1 /* NewsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE356911265D8C4D003B55F1 /* NewsViewModelTests.swift */; };
 		BE399B7E264DEA750048FA00 /* ContentViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE399B7D264DEA750048FA00 /* ContentViewTests.swift */; };
 		BE399B82264DEAB80048FA00 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED850B22641E8B700E6B9FC /* ContentView.swift */; };
 		BE399B88264DEB110048FA00 /* NewViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE399B87264DEB110048FA00 /* NewViewModelMock.swift */; };
@@ -62,6 +65,7 @@
 		BE2FFE03264B574B0009A5B1 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		BE35680E265AE074003B55F1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		BE356833265AEBF1003B55F1 /* SearchToolbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchToolbarView.swift; sourceTree = "<group>"; };
+		BE356911265D8C4D003B55F1 /* NewsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModelTests.swift; sourceTree = "<group>"; };
 		BE399B7D264DEA750048FA00 /* ContentViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewTests.swift; sourceTree = "<group>"; };
 		BE399B87264DEB110048FA00 /* NewViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewViewModelMock.swift; sourceTree = "<group>"; };
 		BE7DC4682647F035004BE77D /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
@@ -230,6 +234,7 @@
 		BED850C12641E8BB00E6B9FC /* DeveloperNewsTests */ = {
 			isa = PBXGroup;
 			children = (
+				BE356911265D8C4D003B55F1 /* NewsViewModelTests.swift */,
 				BE399B86264DEAFC0048FA00 /* Models */,
 				BE399B7D264DEA750048FA00 /* ContentViewTests.swift */,
 				BED850C22641E8BB00E6B9FC /* DeveloperNewsTests.swift */,
@@ -527,11 +532,14 @@
 				BE399B88264DEB110048FA00 /* NewViewModelMock.swift in Sources */,
 				BE399B8F264DEB190048FA00 /* NewsViewModel.swift in Sources */,
 				BE399B9D264DEB380048FA00 /* DeveloperNewsApp.swift in Sources */,
+				BE3568F2265D8AFB003B55F1 /* NetworkManager.swift in Sources */,
 				BE399B98264DEB340048FA00 /* RemoteImage.swift in Sources */,
 				BE399B97264DEB340048FA00 /* NewFullImageRowView.swift in Sources */,
 				BED850C32641E8BB00E6B9FC /* DeveloperNewsTests.swift in Sources */,
+				BE356912265D8C4D003B55F1 /* NewsViewModelTests.swift in Sources */,
 				BE399B99264DEB340048FA00 /* NewRoundImageRowView.swift in Sources */,
 				BE399B93264DEB2F0048FA00 /* NewModel.swift in Sources */,
+				BE35690D265D8B65003B55F1 /* SearchToolbarView.swift in Sources */,
 				BE399B82264DEAB80048FA00 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
