@@ -6,7 +6,7 @@
 import Foundation
 
 // MARK: - NewsValue
-struct NewsValue: Codable, Identifiable {
+struct NewModel: Codable, Identifiable {
     let id = UUID()
     let boolLittleImage: Bool
     let date, newsDescription: String
@@ -24,7 +24,7 @@ struct NewsValue: Codable, Identifiable {
     }
 }
 
-typealias News = [String: NewsValue]
+typealias News = [String: NewModel]
 
 
 func newJSONDecoder() -> JSONDecoder {
@@ -41,4 +41,24 @@ func newJSONEncoder() -> JSONEncoder {
         encoder.dateEncodingStrategy = .iso8601
     }
     return encoder
+}
+
+extension Array where Element == NewModel {
+    func sort(ascendent: Bool = false) -> [NewModel] {
+        if !ascendent {
+            return self.sorted(by: { $0.date.convertToDate() > $1.date.convertToDate() })
+        } else {
+            return self.sorted(by: { $0.date.convertToDate() < $1.date.convertToDate() })
+        }
+    }
+    
+    func filter(by searchValue: String) -> [NewModel] {
+        if searchValue.isEmpty || searchValue == "" {
+            return self
+        }
+        
+        return self.filter { searchText in
+            return searchText.title.lowercased().contains(searchValue.lowercased())
+        }
+    }
 }

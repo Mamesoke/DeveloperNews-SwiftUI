@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NewRoundImageRowView: View {
-    var new : NewsValue
+    var new : NewModel
     
     var body: some View {
         HStack {
