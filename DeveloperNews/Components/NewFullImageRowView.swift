@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NewFullImageRowView: View {
-    var new: NewsValue
+    var new: NewModel
     let greyColor: Color = Color.init(red: 40/255, green: 40/255, blue: 40/255)
     let blackColor: Color = Color.init(red: 30/255, green: 30/255, blue: 30/255)
     

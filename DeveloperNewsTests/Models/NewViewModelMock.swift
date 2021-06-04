@@ -17,7 +17,7 @@ class NewsViewModelMock: NewsViewModel {
                 littleImage = false
                 image = "https://devimages-cdn.apple.com/wwdc-services/articles/images/CDF342DD-530D-4FD9-ACB4-D2B1C893933B/2048.jpeg"
             }
-            let newElement = NewsValue(boolLittleImage: littleImage,
+            let newElement = NewModel(boolLittleImage: littleImage,
                                        date: "\(index) June",
                                        newsDescription: "This is a mock description \(index)",
                                        image: image,
