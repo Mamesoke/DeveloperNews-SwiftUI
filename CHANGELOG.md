@@ -15,3 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Crashlytics implemented
 - Firebase performance implemented
 - Included Analytics and custom events
+- Feature Open in Safari each row
+
+### Changed
+- Refactoring for better performance

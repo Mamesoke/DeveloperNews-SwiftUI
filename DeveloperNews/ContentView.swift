@@ -40,7 +40,7 @@ struct ContentView: View {
                         NewRoundImageRowView(new: item)
                         Button {
                             logEvent(item.title)
-                            print("Button pressed idx: \(item)")
+                            openSafari(item.linkNew)
                         } label: {
                         }
                     }
@@ -49,7 +49,7 @@ struct ContentView: View {
                         NewFullImageRowView(new: item)
                         Button {
                             logEvent(item.title)
-                            print("Button pressed idx: \(item)")
+                            openSafari(item.linkNew)
                         } label: {
                         }
                     }
@@ -58,6 +58,11 @@ struct ContentView: View {
                 self.viewModel.fetchData()
             }
         }
+    }
+    
+    func openSafari(_ url: String) {
+        guard let url = URL(string: url) else { return }
+        UIApplication.shared.open(url)
     }
     
     func logEvent(_ recordName: String){
